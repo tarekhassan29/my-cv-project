@@ -1,0 +1,9 @@
+body{
+    background-color: antiquewhite;
+    text-align: center;
+}
+#name_of_user{
+    padding: 10px;
+    margin: 10px;
+    border: 1px dashed #f60;
+}
