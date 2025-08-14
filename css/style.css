@@ -42,3 +42,22 @@ td{
 tr:nth-child(even){
     background-color: #f2f2f2;
 }
+.projects{
+    margin:20px;
+    padding:10px;
+    border:1px solid #ccc;
+}
+.project-item{
+    margin:5px 0;
+    padding:10px;
+    background-color: #f9f9f9;
+}
+@media (max-width:600px){
+    .skills-list{
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-item{
+        text-align: center;
+    }  
+}
