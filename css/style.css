@@ -17,7 +17,25 @@ body{
     background-color: #e0e0e0;
     padding: 5px 10px;
     border-radius: 5px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .skills-list li:hover{
     background-color: #ccc;
+}
+.exprience{
+    margin:20px;
+    padding:10px;
+    border: 1px solid #ccc;
+}
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+td{
+    padding: 10px;
+    text-align: left;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
 }
