@@ -45,7 +45,6 @@ tr:nth-child(even){
 .projects{
     margin:20px;
     padding:10px;
-    border:1px solid #ccc;
 }
 .project-item{
     margin:5px 0;
