@@ -92,7 +92,6 @@ tr:nth-child(even){
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "about_header . about_image  " " about_footer about_footer about_footer ";
     gap: 10px;
-    border: 1px solid red;
     justify-content: center;
     grid-auto-flow: row;
 }
@@ -110,7 +109,7 @@ tr:nth-child(even){
     
 }
 .about-text {
-    grid-area: about_text;
+    grid-area: about_footer;
     text-align: left;
     margin-left: 0;
     grid-column: 1 / 3;
