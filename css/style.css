@@ -144,6 +144,26 @@ tr:nth-child(even){
 .portfolio-item a {
     text-decoration: none;
 }
+.services {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.services-list {
+    list-style: none;
+    padding: 0;
+}
+.services-list li {
+    margin: 10px 0;
+}
+.services-list i {
+    margin-right: 10px;
+    color: #007bff;
+}
+.services-list li:hover {
+    color: #0056b3;
+}
 @media (max-width:600px){
     .skills-list, .project-item{
         flex-direction: column;
@@ -160,6 +180,9 @@ tr:nth-child(even){
     }
     .portfolio {
         grid-template-columns: 1fr;
+    }
+    .services-list {
+        text-align: center;
     }
 }
 @media (min-width:601px) and (max-width:900px){
