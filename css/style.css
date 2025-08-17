@@ -114,6 +114,20 @@ tr:nth-child(even){
     margin-left: 0;
     grid-column: 1 / 3;
 }
+.testimonials {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.testimonial {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px;
+    width: 45%;
+}
 @media (max-width:600px){
     .skills-list, .project-item{
         flex-direction: column;
@@ -124,6 +138,9 @@ tr:nth-child(even){
     }  
     .about {
         grid-template-columns: 1fr;
+    }
+    .testimonial {
+        width: 100%;
     }
 }
 @media (min-width:601px) and (max-width:900px){
