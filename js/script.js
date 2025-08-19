@@ -18,3 +18,13 @@ function changeBackgroundColor() {
 // ربط الدالة بالزر
 const changeButton = document.getElementById("changeColor");
 changeButton.addEventListener("click", changeBackgroundColor);
+
+
+function addNewSkill() {
+    const skillsList = document.querySelector(".skills-list");
+    const newSkill = document.createElement("li");
+    newSkill.textContent = "New Skill " + (skillsList.children.length + 1);
+    skillsList.appendChild(newSkill);
+}
+const addButton = document.getElementById("addSkill");
+addButton.addEventListener("click", addNewSkill);
