@@ -150,3 +150,22 @@ function loadSkills() {
 window.onload = loadSkills;
 const addButton1 = document.getElementById("addSkill");
 addButton1.addEventListener("click", addNewSkill);
+
+
+const skillForm = document.getElementById("skillForm");
+skillForm.addEventListener("submit", function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+    const newSkillInput = document.getElementById("newSkillInput");
+    const skillText = newSkillInput.value.trim();
+if (skillText && !Array.from(skillsList.children).some(li => li.textContent === skillText)) {
+    const newSkill = document.createElement("li");
+    newSkill.textContent = skillText;
+    skillsList.appendChild(newSkill);
+    saveSkills();
+    newSkillInput.value = "";
+} else if (skillText) {
+    alert("Skill already exists!");
+}
+});
+// استمرار الدوال saveSkills وloadSkills من المهمة السابقة
+
