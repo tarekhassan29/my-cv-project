@@ -157,15 +157,52 @@ skillForm.addEventListener("submit", function(event) {
     event.preventDefault(); // منع إعادة تحميل الصفحة
     const newSkillInput = document.getElementById("newSkillInput");
     const skillText = newSkillInput.value.trim();
-if (skillText && !Array.from(skillsList.children).some(li => li.textContent === skillText)) {
-    const newSkill = document.createElement("li");
-    newSkill.textContent = skillText;
-    skillsList.appendChild(newSkill);
-    saveSkills();
-    newSkillInput.value = "";
-} else if (skillText) {
-    alert("Skill already exists!");
-}
+    if (skillText && !Array.from(skillsList.children).some(li => li.textContent === skillText)) {
+        const newSkill = document.createElement("li");
+        newSkill.textContent = skillText;
+        skillsList.appendChild(newSkill);
+        saveSkills();
+        newSkillInput.value = "";
+    } else if (skillText) {
+        alert("Skill already exists!");
+    }
 });
 // استمرار الدوال saveSkills وloadSkills من المهمة السابقة
 
+function fetchData() {
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => response.json())
+        .then(data => {
+            const apiResult = document.getElementById("apiResult");
+            apiResult.textContent = `Title: ${data.title}, Body: ${data.body.substring(0, 50)}...`;
+        })
+        .catch(error => console.log("Error fetching data: ", error));
+}
+// استدعاء الدالة عند تحميل الصفحة
+window.onload = fetchData;
+
+
+function fetchData() {
+    const apiResult = document.getElementById("apiResult");
+    apiResult.textContent = "Loading...";
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
+        .then(response => response.json())
+        .then(data => {
+            apiResult.textContent = `Title: ${data.title}, Body: ${data.body.substring(0, 50)}...`;
+        })
+        .catch(error => console.log("Error fetching data: ", error));
+}
+window.onload = fetchData;
+const refreshButton = document.getElementById("refreshData");
+refreshButton.addEventListener("click", fetchData);
+
+
+function updateSummary() {
+    const skillsCount = document.querySelector(".skills-list").children.length;
+    const summaryText = document.getElementById("summaryText");
+    summaryText.textContent = `You have ${skillsCount} skills, and the last project is ${Object.values(projectsData)[0].name} (${Object.values(projectsData)[0].year}).`;
+}
+const updateButton = document.getElementById("updateSummary");
+updateButton.addEventListener("click", updateSummary);
+// استدعاء الدالة عند التحميل
+window.onload = updateSummary;
