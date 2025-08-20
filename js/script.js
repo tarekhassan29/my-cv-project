@@ -102,3 +102,22 @@ function displayProjects() {
 }
 // استدعاء الدالة عند تحميل الصفحة
 window.onload = displayProjects;
+
+function highlightSkills() {
+    const skillsList = document.querySelector(".skills-list");
+    const skills = skillsList.children;
+    for (let skill of skills) {
+        skill.style.backgroundColor = "yellow";
+    }
+}
+function resetSkills() {
+    const skillsList = document.querySelector(".skills-list");
+    const skills = skillsList.children;
+    for (let skill of skills) {
+        skill.style.backgroundColor = "";
+    }
+}
+const highlightButton = document.getElementById("highlightSkills");
+const resetButton = document.getElementById("resetSkills");
+highlightButton.addEventListener("click", highlightSkills);
+resetButton.addEventListener("click", resetSkills);
