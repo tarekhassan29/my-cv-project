@@ -73,3 +73,32 @@ function showProjectsDelayed() {
 }
 const delayButton = document.getElementById("delayedShow");
 delayButton.addEventListener("click", showProjectsDelayed);
+
+function showProjectsDelayed() {
+    const projectsSection = document.querySelector(".projects");
+    projectsSection.style.opacity = "0";
+    setTimeout(() => {
+        projectsSection.style.opacity = "1";
+        console.log("Projects shown after delay");
+    }, 2000); // عرض بعد 2 ثانية
+}
+const delayButton1 = document.getElementById("delayedShow1");
+delayButton1.addEventListener("click", showProjectsDelayed);
+
+
+const projectsData = {
+    project1: { name: "CV Webpage", year: "2025" },
+    project2: { name: "ToDo", year: "2024" },
+    project3: { name: "ERP Project", year: "2023" },
+    project4: { name: "aspire Project", year: "2022" }
+};
+
+function displayProjects() {
+    const projectsSection = document.querySelector(".projects");
+    projectsSection.innerHTML = "<h2>Previous Projects</h2>";
+    for (let project in projectsData) {
+        projectsSection.innerHTML += `<div class="project-item">${projectsData[project].name} (${projectsData[project].year})</div>`;
+    }
+}
+// استدعاء الدالة عند تحميل الصفحة
+window.onload = displayProjects;
