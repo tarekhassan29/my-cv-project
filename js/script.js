@@ -121,3 +121,30 @@ const highlightButton = document.getElementById("highlightSkills");
 const resetButton = document.getElementById("resetSkills");
 highlightButton.addEventListener("click", highlightSkills);
 resetButton.addEventListener("click", resetSkills);
+
+
+function addNewSkill() {
+    const skillsList = document.querySelector(".skills-list");
+    const newSkill = document.createElement("li");
+    newSkill.textContent = "New Skill " + (skillsList.children.length + 1);
+    skillsList.appendChild(newSkill);
+    saveSkills();
+}
+function saveSkills() {
+    const skillsList = document.querySelector(".skills-list");
+    const skills = Array.from(skillsList.children).map(li => li.textContent);
+    localStorage.setItem("skills", JSON.stringify(skills));
+}
+function loadSkills() {
+    const skills = JSON.parse(localStorage.getItem("skills")) || [];
+    const skillsList = document.querySelector(".skills-list");
+    skills.forEach(skill => {
+        const li = document.createElement("li");
+        li.textContent = skill;
+        skillsList.appendChild(li);
+    });
+}
+// استدعاء التحميل عند بدء الصفحة
+window.onload = loadSkills;
+const addButton1 = document.getElementById("addSkill");
+addButton1.addEventListener("click", addNewSkill);
