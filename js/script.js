@@ -19,7 +19,7 @@ function changeBackgroundColor() {
 const changeButton = document.getElementById("changeColor");
 changeButton.addEventListener("click", changeBackgroundColor);
 
-
+/*
 function addNewSkill() {
     const skillsList = document.querySelector(".skills-list");
     const newSkill = document.createElement("li");
@@ -28,7 +28,7 @@ function addNewSkill() {
 }
 const addButton = document.getElementById("addSkill");
 addButton.addEventListener("click", addNewSkill);
-
+*/
 let isVisible = true;
 function hideShowElement(){
     const element = document.querySelector('.about-text');
