@@ -139,9 +139,11 @@ function loadSkills() {
     const skills = JSON.parse(localStorage.getItem("skills")) || [];
     const skillsList = document.querySelector(".skills-list");
     skills.forEach(skill => {
-        const li = document.createElement("li");
-        li.textContent = skill;
-        skillsList.appendChild(li);
+        if (!skillsList.querySelector(`li:contains("${skill}")`)) { // ملاحظة: هذا مثال، قد تحتاج تعديلًا
+            const li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        }
     });
 }
 // استدعاء التحميل عند بدء الصفحة
